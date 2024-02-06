@@ -1,22 +1,11 @@
 import React from "react";
-import { useEffect, useState } from "react";
-import { getArticles } from "./api";
 
 
-export default function ArticleList() {
-  const [articles, setArticles] = useState([]);
-  useEffect(() => {
-    getArticles().then((response) => {
-      console.log(response.data)
-      setArticles(response.data);
-    });
-  }, [])
-
+export default function ArticleList({articles}) {
   return (
     <>
     <section >
-    {articles && 
-    articles.map((article) => (
+    {articles.map((article) => (
       <div key={article.article_id}>
         <img src={article.article_img_url} />
         <p>Article ID: {article.article_id}</p>
