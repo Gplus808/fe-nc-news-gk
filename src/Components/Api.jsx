@@ -5,7 +5,12 @@ const articlesApi = axios.create({
   });
 
 export function getArticles() {
-    return articlesApi.get('/api/articles');
-  }
+    return articlesApi.get(`/api/articles`);
+  } 
+
+export function getArticleById(article_Id) {
+  console.log(article_Id)
+  return articlesApi.get(`/api/articles/${article_Id}`);
+}
 
 export default articlesApi
