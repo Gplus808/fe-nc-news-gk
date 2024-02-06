@@ -1,6 +1,5 @@
 import './App.css'
 import { Routes, Route } from "react-router-dom";
-
 //------Components--------//
 import Header from './Components/Header'
 import Articles from './Components/Articles'
