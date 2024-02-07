@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './ArticleList.css'
-import { getArticles } from "./api";
+import { getArticles } from "./Api";
 import ArticleList from "./ArticleList";
 
 
