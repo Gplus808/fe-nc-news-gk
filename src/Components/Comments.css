@@ -1,0 +1,12 @@
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    margin: 20px;
+}
+
+.comment-box {
+    border: 1px solid #d0caca; 
+    padding: 10px;
+    margin-bottom: 20px; 
+}

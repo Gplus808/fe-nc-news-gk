@@ -11,7 +11,7 @@ export default function ArticleList({articles}) {
       <div key={article.article_id} >
         <img className="article-image" src={article.article_img_url} />
         <div className="article-content">
-        <Link to={`/article/${article.article_id}`}>
+        <Link to={`/articles/${article.article_id}`}>
             <button>View Article</button>
           </Link>
         <p>Article ID: {article.article_id}</p>
@@ -19,7 +19,6 @@ export default function ArticleList({articles}) {
         <p>Author: {article.author}</p>
         <p>Published at: {article.created_at}</p>
         <p>Like: {article.votes}</p>
-        {/* {"Comment implinetation pending"} */}
         </div>
         </div>
     ))}

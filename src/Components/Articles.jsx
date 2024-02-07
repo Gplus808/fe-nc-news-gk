@@ -12,7 +12,6 @@ function Articles() {
   useEffect(() => {
     getArticles().then((response) => {
       setArticles(response.data);
-      console.log(response.data)
       setIsLoading(false)
     }).catch((error) => {
       setError(`Failed to load articles ${error}`);
