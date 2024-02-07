@@ -9,8 +9,11 @@ export function getArticles() {
   } 
 
 export function getArticleById(article_Id) {
-  console.log(article_Id)
   return articlesApi.get(`/api/articles/${article_Id}`);
 }
 
-export default articlesApi
+export function getComments(article_Id) {
+  return articlesApi.get(`/api/articles/${article_Id}/comments`);
+}
+
+// export default articlesApi
