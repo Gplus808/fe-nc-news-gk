@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import './ArticleList.css'
+import moment from 'moment';
 
 
 export default function ArticleList({articles}) {
@@ -17,7 +18,7 @@ export default function ArticleList({articles}) {
         <p>Article ID: {article.article_id}</p>
         <p>Title: {article.title}</p>
         <p>Author: {article.author}</p>
-        <p>Published at: {article.created_at}</p>
+        <p>Published at: {moment(article.created_at).format('DD-MM-YYYY HH:mm:ss')}</p>
         <p>Like: {article.votes}</p>
         </div>
         </div>
