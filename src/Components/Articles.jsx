@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getArticles } from "./api";
+import './ArticleList.css'
+import { getArticles } from "./Api";
 import ArticleList from "./ArticleList";
 
 
@@ -13,7 +14,7 @@ function Articles() {
       setArticles(response.data);
       setIsLoading(false)
     }).catch((error) => {
-      setError("Failed to load articles.");
+      setError(`Failed to load articles ${error}`);
       setIsLoading(false);
   })
   }, []);
