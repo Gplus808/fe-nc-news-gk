@@ -12,8 +12,7 @@ function PostCommentForm({ articleId, onCommentPosted }) {
       votes: 0,
       created_at: new Date().toISOString(),
     };
-    
-    
+
     postComment(articleId, commentToPost).then(() => {
       onCommentPosted();
       setBody('');
