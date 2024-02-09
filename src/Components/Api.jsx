@@ -16,4 +16,8 @@ export function getComments(article_Id) {
   return articlesApi.get(`/api/articles/${article_Id}/comments`);
 }
 
+export function patchVotes(article_Id, inc_votes) {
+  return articlesApi.patch(`/api/articles/${article_Id}`, {inc_votes})
+}
+
 // export default articlesApi

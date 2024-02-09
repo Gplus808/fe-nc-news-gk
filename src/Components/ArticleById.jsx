@@ -4,16 +4,18 @@ import { useParams } from 'react-router-dom';
 import { getArticleById, getComments } from './Api';
 import moment from 'moment';
 import Comments from './Comments';
+import Votes from './Votes';
 
 function ArticleById() {
     const { articleId } = useParams();
     const [article, setArticle] = useState(null);
-    const [error, setError] = useState(null);
     const [showComments, setShowComments] = useState(false);
+    const [error, setError] = useState(null);
   
     useEffect(() => {
         getArticleById(articleId)
           .then((response) => {
+            console.log("Article data:", response.data);
             setArticle(response.data);
           })
           .catch((error) => {
@@ -39,7 +41,7 @@ function ArticleById() {
         <p>Article ID: {article.article.article_id}</p>
         <p>Author: {article.article.author}</p>
         <p>Published at: {dateTime.format('DD-MM-YYYY HH:mm:ss')}</p>
-        <p>Like: {article.article.votes}</p>
+        <Votes initialVotes={article.article.votes} articleId={articleId} />
         <p>{article.article.body}</p>
         <button onClick={toggleComments}>View Comments</button>
                 {showComments && <Comments articleId={article.article.article_id} />}
