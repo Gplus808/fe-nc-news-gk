@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getComments } from './Api';
 import { useParams } from 'react-router-dom';
-import ArticleById from './ArticleById';
 import './Comments.css'
 
 function Comments() {
   const { articleId } = useParams();
   const [comments, setComments] = useState([])
   const [error, setError] = useState(null);
+  
 
   useEffect(() => {
     getComments(articleId).then((response) => {
@@ -18,15 +18,17 @@ function Comments() {
     });
   }, [articleId]);
 
+
+
+  if (comments.length === 0) return <p>No comments yet.</p>;
   if (error) return <p>Error loading comments: {error}</p>;
   if (!comments) return <p>Loading comments...</p>;
 
-
   return (
     <>
-    <ArticleById />
       <div className='comment-container'>
     <section>
+      <h3>Comments</h3>
     {comments.map((comment) => (
       <div className='comment-box' key={comment.comment_id}>
         <p>Author: {comment.author}</p>
@@ -35,9 +37,6 @@ function Comments() {
         <p>{comment.body}</p>
       </div>
     ))}
-      <div>
-
-      </div>
     </section>
   </div>
     </>
