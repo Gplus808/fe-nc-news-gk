@@ -1,3 +1,4 @@
 To Do List
 
-1. Format Published date for articles
+1. Change show comment button to 'hide comments for toggle functionality
+2. Once user login/signup function is created, update PostComment component to only allow posting when logged in and change username for post dynamically

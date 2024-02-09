@@ -20,4 +20,10 @@ export function patchVotes(article_Id, inc_votes) {
   return articlesApi.patch(`/api/articles/${article_Id}`, {inc_votes})
 }
 
+export function postComment(article_Id, commentData) {
+  return articlesApi.post(`/api/articles/${article_Id}/comments`, {
+    body: commentData.body,
+  });
+}
+
 // export default articlesApi
