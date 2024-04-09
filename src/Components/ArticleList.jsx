@@ -9,7 +9,7 @@ export default function ArticleList({articles}) {
     <>
     <section className="article-container">
     {articles.map((article) => (
-      <div key={article.article_id} >
+      <div key={article.article_id} className="article-item">
         <img className="article-image" src={article.article_img_url} />
         <div className="article-content">
         <Link to={`/articles/${article.article_id}`}>
@@ -18,7 +18,7 @@ export default function ArticleList({articles}) {
         <p>Article ID: {article.article_id}</p>
         <p>Title: {article.title}</p>
         <p>Author: {article.author}</p>
-        <p>Published at: {moment(article.created_at).format('DD-MM-YYYY HH:mm:ss')}</p>
+        {/* <p>Published at: {moment(article.created_at).format('DD-MM-YYYY HH:mm:ss')}</p> */}
         <p>Like: {article.votes}</p>
         </div>
         </div>
